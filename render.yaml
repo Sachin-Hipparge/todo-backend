@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: todo-backend
+    env: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://<your-mysql-host>:3306/todo_app
+      - key: SPRING_DATASOURCE_USERNAME
+        value: todo_user
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: todo
